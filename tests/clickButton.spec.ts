@@ -27,7 +27,8 @@ test("workshop clicking on buttons2",async ({page})=>{
     await page.goto("https://demoqa.com/buttons")
 
     //await page.locator("#RD5Sk").scrollIntoViewIfNeeded()
-    await page.locator("#xfPgF").click()
+    await page.getByRole('button', { name: 'Click Me', exact: true }).click()
+    //await page.locator("#xfPgF").click()
 
     await expect(await page.locator("p#dynamicClickMessage")).toHaveText("You have done a dynamic click")
 })
